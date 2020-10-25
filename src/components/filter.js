@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
-const Filter = ({ years, getFilter }) => {
+const Filter = ({ years, getFilter, selected }) => {
   return (
     <Grid item xs={12} className="app-card">
       <Typography>Filters</Typography>
@@ -22,6 +22,7 @@ const Filter = ({ years, getFilter }) => {
               key={year}
             >
               <Typography
+                style={{ background: (year == selected.launch_year) ? '#70bd21b5' : '#8ec357b5'}}
                 className="filter-grid"
                 direction="row"
                 justify="center"
@@ -50,6 +51,7 @@ const Filter = ({ years, getFilter }) => {
           >
             <Typography
               className="filter-grid"
+              style={{ background: selected.launch_success === "true" ? '#70bd21b5' : '#8ec357b5'}}
               direction="row"
               justify="center"
               align="center"
@@ -68,6 +70,7 @@ const Filter = ({ years, getFilter }) => {
           >
             <Typography
               className="filter-grid"
+              style={{ background: selected.launch_success === 'false' ? '#70bd21b5' : '#8ec357b5'}}
               direction="row"
               justify="flex-end"
               align="center"
@@ -94,6 +97,7 @@ const Filter = ({ years, getFilter }) => {
           >
             <Typography
               className="filter-grid"
+              style={{ background: selected.land_success === "true" ? '#70bd21b5' : '#8ec357b5'}}
               direction="row"
               justify="center"
               align="center"
@@ -115,6 +119,7 @@ const Filter = ({ years, getFilter }) => {
               direction="row"
               justify="flex-end"
               id="land_success"
+              style={{ background: selected.land_success === 'false' ? '#70bd21b5' : '#8ec357b5'}}
               onClick={getFilter}
             >
               {"false"}

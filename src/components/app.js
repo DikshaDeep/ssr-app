@@ -41,7 +41,7 @@ class App extends Component {
         </Grid>
         <Grid className="app-wrapper" item xs={12} container direction='row'>
           <Grid item xs={12} md={3}>
-            <Filter years={years} getFilter={this.getFilter} />
+            <Filter years={years} selected={this.state.filter} getFilter={this.getFilter} />
           </Grid>
           {isFetching && totalapps === 0 && <h2>Loading...</h2>}
           {!isFetching && totalapps === 0 && <h2>Empty.</h2>}
