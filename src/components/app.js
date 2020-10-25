@@ -5,6 +5,7 @@ import { fetchAppsIfNeeded, getYears, fetchFilter } from '../redux/actions'
 import Filter from '../components/filter';
 
 import Card from './card'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +40,7 @@ class App extends Component {
             <b>Space X launch Programs</b>
           </Typography>
         </Grid>
-        <Grid className="app-wrapper" item xs={12} container direction='row'>
+        <Grid className='app-wrapper' item xs={12} container direction='row'>
           <Grid item xs={12} md={3}>
             <Filter years={years} selected={this.state.filter} getFilter={this.getFilter} />
           </Grid>
